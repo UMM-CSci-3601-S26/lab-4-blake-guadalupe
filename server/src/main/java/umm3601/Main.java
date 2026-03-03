@@ -1,7 +1,6 @@
 package umm3601;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoDatabase;
-import umm3601.user.UserController;
 import umm3601.Inventory.InventoryController;
 
 public class Main {
@@ -59,7 +58,6 @@ public class Main {
       // the `Controller` interface.
       //
       // You can also remove this UserController once you don't need it.
-      new UserController(database),
       new InventoryController(database)
     };
     return controllers;
