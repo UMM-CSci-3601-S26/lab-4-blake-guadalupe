@@ -38,11 +38,41 @@
           data-cy="filter-color"
         />
   </mat-form-field>
+  <mat-form-field appearance="outline">
+        <mat-label>Size</mat-label>
+        <input
+          matInput
+          [ngModel]="size() ?? ''"
+          (ngModelChange)="size.set($event?.trim() || undefined)"
+          placeholder="contains..."
+          data-cy="filter-size"
+        />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+        <mat-label>Type</mat-label>
+        <input
+          matInput
+          [ngModel]="type() ?? ''"
+          (ngModelChange)="type.set($event?.trim() || undefined)"
+          placeholder="contains..."
+          data-cy="filter-type"
+        />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+        <mat-label>Material</mat-label>
+        <input
+          matInput
+          [ngModel]="material() ?? ''"
+          (ngModelChange)="material.set($event?.trim() || undefined)"
+          placeholder="contains..."
+          data-cy="filter-material"
+        />
+  </mat-form-field>
 
   <button
     mat-stroked-button
     type="button"
-    (click)="item.set(undefined); brand.set(undefined); color.set(undefined)"
+    (click)="item.set(undefined); brand.set(undefined); color.set(undefined); size.set(undefined); type.set(undefined); material.set(undefined)"
     data-cy="filter-clear"
   >
     Clear

@@ -37,6 +37,15 @@ export class InventoryService {
       if (filters.color) {
         httpParams = httpParams.set(this.colorKey, filters.color);
       }
+      if (filters.size) {
+        httpParams = httpParams.set(this.sizeKey, filters.size);
+      }
+      if (filters.type) {
+        httpParams = httpParams.set(this.typeKey, filters.type);
+      }
+      if (filters.material) {
+        httpParams = httpParams.set(this.materialKey, filters.material);
+      }
 
     }
     return this.httpClient.get<Inventory[]>(this.inventoryUrl, { params: httpParams });

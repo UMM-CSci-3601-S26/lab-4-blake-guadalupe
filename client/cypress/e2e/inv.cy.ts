@@ -35,6 +35,7 @@ describe('Inventory', () => {
     cy.url().should('match', /\/inventory$/);
     page.getSidenav()
       .should('be.hidden');
+    nextTick(300)
     cy.contains('td', 'Markers').should('exist');
   });
   it('should have pagination controls', () => {
@@ -85,6 +86,15 @@ describe('Inventory', () => {
       }
       if ($body.find('[data-cy="filter-color"]').length === 0) {
         recordError(`Empty filter input for Color`);
+      }
+      if ($body.find('[data-cy="filter-size"]').length === 0) {
+        recordError(`Empty filter input for Size`);
+      }
+      if ($body.find('[data-cy="filter-type"]').length === 0) {
+        recordError(`Empty filter input for Type`);
+      }
+      if ($body.find('[data-cy="filter-material"]').length === 0) {
+        recordError(`Empty filter input for Material`);
       }
     });
 
@@ -164,3 +174,8 @@ describe('Inventory', () => {
   //   });
   // });
 });
+
+function nextTick(ms: number) {
+  cy.wait(ms);
+}
+
