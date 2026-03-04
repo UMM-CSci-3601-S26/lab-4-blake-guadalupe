@@ -1,11 +1,9 @@
-
 export class InventoryPage {
   private readonly baseUrl = '/inventory';
   private readonly titleSelector = '.inventory-title';
   private readonly sideNavButton = '.sidenav-button';
   private readonly sideNav = '.sidenav';
   private readonly sideNavOption = '[routerlink] > .mdc-list-item__content';
-
 
   navigateTo() {
     return cy.visit(this.baseUrl);

@@ -1,10 +1,13 @@
+// Packages
 package umm3601;
+
+// Imports
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoDatabase;
 import umm3601.Inventory.InventoryController;
 
+// Main
 public class Main {
-
   public static void main(String[] args) {
     // Get the MongoDB address and database name from environment variables and
     // if they aren't set, use the defaults of "localhost" and "dev".
@@ -62,5 +65,4 @@ public class Main {
     };
     return controllers;
   }
-
 }

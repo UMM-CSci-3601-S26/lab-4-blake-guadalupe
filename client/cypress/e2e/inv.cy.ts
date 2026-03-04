@@ -16,8 +16,8 @@ describe('Inventory', () => {
     cy.intercept('GET', '/api/inventory*').as('getInventory');
     page.navigateTo();
     // Wait for the inventory data to load
-    //cy.wait('@getInventory');
-    nextTick(1000);
+    cy.wait('@getInventory');
+    //nextTick(1000); // Alternate wait method, preferably wait on the API call instead
   });
 
   it('Should have the correct title', () => {
@@ -31,7 +31,8 @@ describe('Inventory', () => {
     page.getSidenav()
       .should('be.hidden');
     nextTick(1000)
-    cy.contains('td', 'Test Item').should('exist'); //First item in the table, once 'test item' gets removed, need to update
+    cy.contains('td', 'Test Item').should('exist'); // First item in the table
+    // Note: Once 'test item' gets removed, this needs to be updated (possibly update to not check the first?)
   });
 
   it('should have pagination controls', () => {
@@ -144,15 +145,15 @@ describe('Inventory', () => {
     cy.get('[data-cy="filter-size"]').type(Filters_Test.Size);
 
     // Wait for the filtered results to load
-    //cy.wait('@filterInventory');
-    nextTick(1000);
+    cy.wait('@filterInventory');
+    //nextTick(1000); // Alternate wait method, preferably wait on the API call instead
 
     // Click the clear filters button
     cy.get('[data-cy="filter-clear"]').click();
 
     // Wait for the unfiltered results to load
-    //cy.wait('@filterInventory');
-    nextTick(1000);
+    cy.wait('@filterInventory');
+    //nextTick(1000); // Alternate wait method, preferably wait on the API call instead
 
     // Check that the first row is no longer the filtered item
     page.getInventoryRow().first().within(() => {
@@ -162,6 +163,8 @@ describe('Inventory', () => {
       cy.get('[data-cy="inventory-size"]').should('not.contain', Filters_Test.Size);
     });
   });
+
+  // Note: The below test should remain empty until a finalized inventory list JSON is used to seed the database.
 
   // it('should report all empty cells across all pages', () => {
   //   page.getSidenavButton().click();

@@ -1,5 +1,7 @@
+// Packages
 package umm3601.mongotest;
 
+// Static Imports
 import static com.mongodb.client.model.Filters.gt;
 import static com.mongodb.client.model.Projections.excludeId;
 import static com.mongodb.client.model.Projections.fields;
@@ -8,10 +10,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
+// Java Imports
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// Com Imports
 import com.mongodb.MongoClientSettings;
 import com.mongodb.ServerAddress;
 import com.mongodb.client.FindIterable;
@@ -24,15 +28,15 @@ import com.mongodb.client.model.Accumulators;
 import com.mongodb.client.model.Aggregates;
 import com.mongodb.client.model.Sorts;
 
+// Org Imports
 import org.bson.Document;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-/**
- * Simple tests to verify we can connect to MongoDB and do basic queries.
- */
+// Test Class
+//Simple tests to verify we can connect to MongoDB and do basic queries.
 @SuppressWarnings({"MagicNumber"})
 class MongoSpec {
 
@@ -183,5 +187,4 @@ class MongoSpec {
     assertEquals(100, docs.get(1).get("_id"));
     assertEquals(1, docs.get(1).get("quantityCount"));
   }
-
 }
