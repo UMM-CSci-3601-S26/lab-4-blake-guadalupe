@@ -121,7 +121,7 @@ describe('Inventory', () => {
 
     // Wait for the filtered results to load
     cy.wait('@filterInventory');
-    //nextTick(1000);
+    nextTick(1000);
 
     cy.get(`[data-cy="inventory-table"]`).should('be.visible').then(() => {
       cy.get(`[data-cy="inventory-item"]`).each(e => cy.wrap(e).should('include.text', Filters_Test.Item));
