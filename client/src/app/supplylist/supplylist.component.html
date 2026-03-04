@@ -1,0 +1,98 @@
+<div class="flex-row">
+  <div class="flex-1">
+
+    <mat-card class="search-grid">
+      <mat-card-header>
+        <mat-card-title class="supplylist-title">Supply List</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field appearance="outline">
+        <mat-label>Item</mat-label>
+        <input
+          matInput
+          [ngModel]="item() ?? ''"
+          (ngModelChange)="item.set($event?.trim() || undefined)"
+          placeholder="contains..."
+          data-cy="filter-item"
+        />
+  </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Brand</mat-label>
+        <input
+          matInput
+          [ngModel]="brand() ?? ''"
+          (ngModelChange)="brand.set($event?.trim() || undefined)"
+          placeholder="contains..."
+          data-cy="filter-brand"
+        />
+  </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Color</mat-label>
+        <input
+          matInput
+          [ngModel]="color() ?? ''"
+          (ngModelChange)="color.set($event?.trim() || undefined)"
+          placeholder="contains..."
+          data-cy="filter-color"
+        />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+        <mat-label>Size</mat-label>
+        <input
+          matInput
+          [ngModel]="size() ?? ''"
+          (ngModelChange)="size.set($event?.trim() || undefined)"
+          placeholder="contains..."
+          data-cy="filter-size"
+        />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+        <mat-label>Type</mat-label>
+        <input
+          matInput
+          [ngModel]="type() ?? ''"
+          (ngModelChange)="type.set($event?.trim() || undefined)"
+          placeholder="contains..."
+          data-cy="filter-type"
+        />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+        <mat-label>Material</mat-label>
+        <input
+          matInput
+          [ngModel]="material() ?? ''"
+          (ngModelChange)="material.set($event?.trim() || undefined)"
+          placeholder="contains..."
+          data-cy="filter-material"
+        />
+  </mat-form-field>
+
+  <button
+    mat-stroked-button
+    type="button"
+    (click)="item.set(undefined); brand.set(undefined); color.set(undefined); size.set(undefined); type.set(undefined); material.set(undefined)"
+    data-cy="filter-clear"
+  >
+    Clear
+  </button>
+
+  <p>Count: {{ serverFilteredSupplyList().length }}</p>
+
+  <mat-list role="Display Items">
+    @for (element of serverFilteredSupplyList(); track $index) {
+      <mat-list-item role="Display Items">
+        <div class = "list-style">
+          <div class="field" data-cy="supplylist-school"><strong>School:</strong> {{ element.school}} </div>
+          <div class="field" data-cy="supplylist-grade"><strong>Grade:</strong> {{ element.grade}} </div>
+          <div class="field" data-cy="supplylist-item"><strong>Item:</strong> {{ element.item }}</div>
+          <div class="field" data-cy="supplylist-brand"><strong>Brand:</strong> {{ element.brand }}</div>
+          <div class="field" data-cy="supplylist-color"><strong>Color:</strong> {{ element.color }}</div>
+          <div class="field" data-cy="supplylist-size"><strong>Size:</strong> {{ element.size }}</div>
+          <div class="field" data-cy="supplylist-type"><strong>Type:</strong> {{ element.type }}</div>
+          <div class="field" data-cy="supplylist-material"><strong>Material:</strong> {{ element.material }}</div>
+        </div>
+      </mat-list-item>
+    }
+  </mat-list>

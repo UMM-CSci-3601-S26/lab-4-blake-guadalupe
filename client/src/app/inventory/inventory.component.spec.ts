@@ -10,7 +10,7 @@ import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { MatPaginatorHarness } from '@angular/material/paginator/testing';
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import { MatTableHarness } from '@angular/material/table/testing';
-import { HarnessLoader } from '@angular/cdk/testing';;
+import { HarnessLoader } from '@angular/cdk/testing';
 
 
 describe('Inventory Table', () => {
