@@ -16,7 +16,7 @@ describe('Inventory', () => {
     cy.intercept('GET', '/api/inventory*').as('getInventory');
     page.navigateTo();
     // Wait for the inventory data to load
-    cy.wait('@getInventory');
+    cy.wait(1000)
     //nextTick(1000); // Alternate wait method, preferably wait on the API call instead
   });
 
@@ -30,8 +30,8 @@ describe('Inventory', () => {
     cy.url().should('match', /\/inventory$/);
     page.getSidenav()
       .should('be.hidden');
-    nextTick(1000)
-    page.getInventoryRow().first().should('contain', 'Bowls') // First item in the table
+    cy.wait(1000)
+    page.getInventoryRow().should('contain', 'Bowls') // First item in the table
     // Note: Once 'test item' gets removed, this needs to be updated (possibly update to not check the first?)
   });
 
@@ -235,7 +235,3 @@ describe('Inventory', () => {
   //   });
   // });
 });
-
-function nextTick(ms: number) {
-  cy.wait(ms);
-}
