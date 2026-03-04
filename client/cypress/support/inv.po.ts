@@ -25,7 +25,7 @@ export class InventoryPage {
     return cy.contains(this.sideNavOption, `${navOption}`);
   }
   getInventoryItem() {
-    return cy.get('[data-cy="inventory-item"]');
+    return cy.get('data-cy="inventory-item"');
   }
   getInventoryBrand() {
     return cy.get('[data-cy="inventory-brand"]');

@@ -120,8 +120,7 @@ describe('Inventory', () => {
     cy.get('[data-cy="filter-size"]').type(Filters_Test.Size);
 
     // Wait for the filtered results to load
-    //cy.wait('@filterInventory');
-    nextTick(1000);
+    cy.wait('@filterInventory');
 
     page.getInventoryRow().first().within(() => {
       cy.get('[data-cy="inventory-item"]').should('contain', Filters_Test.Item);
