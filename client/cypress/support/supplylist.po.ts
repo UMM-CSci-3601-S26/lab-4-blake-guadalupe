@@ -23,7 +23,7 @@ export class SupplyListPage {
     return cy.get(this.sideNav);
   }
 
-  getNavLink(navOption: 'Home' | 'supplylist' ) {
+  getNavLink(navOption: 'Home' | 'Supply List' ) {
     return cy.contains(this.sideNavOption, `${navOption}`);
   }
   getSupplyListSchool() {
