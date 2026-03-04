@@ -123,6 +123,8 @@ describe('Inventory', () => {
     cy.wait('@filterInventory');
     nextTick(1000);
 
+    cy.get(`[data-cy="inventory-table"]`).should('be.visible');
+
     cy.get(`[data-cy="inventory-item"]`) // Finds a cell that is an inventory-item
       .parent(`[data-cy="inventory-row"]`)             // Selects the parent row element
       .each(row => {            // Scopes subsequent commands to this row
