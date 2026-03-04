@@ -114,10 +114,10 @@ describe('Inventory', () => {
     // Intercept the filtered API calls
     cy.intercept('GET', '/api/inventory*').as('filterInventory');
 
-    cy.get('[data-cy="filter-item"]').clear().type(Filters_Test.Item, {delay: 100});
-    cy.get('[data-cy="filter-brand"]').clear().type(Filters_Test.Brand, {delay: 100});
-    cy.get('[data-cy="filter-type"]').clear().type(Filters_Test.Type, {delay: 100});
-    cy.get('[data-cy="filter-size"]').clear().type(Filters_Test.Size, {delay: 100});
+    cy.get('[data-cy="filter-item"]').clear().type(Filters_Test.Item, {delay: 300});
+    cy.get('[data-cy="filter-brand"]').clear().type(Filters_Test.Brand, {delay: 300});
+    cy.get('[data-cy="filter-type"]').clear().type(Filters_Test.Type, {delay: 300});
+    cy.get('[data-cy="filter-size"]').clear().type(Filters_Test.Size, {delay: 300});
 
     // Wait for debounce (300ms) + buffer to ensure the final API call is made
     cy.wait(500);
