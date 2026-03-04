@@ -55,7 +55,7 @@ export class InventoryPage {
     return cy.get('[data-cy="inventory-paginator"]');
   }
   getInventoryRow() {
-    return cy.get('[data-cy="inventory-row"]');
+    return cy.get(`[data-cy="inventory-row"]`);
   }
   getInventoryFilterClear() {
     return cy.get('[data-cy="inventory-clear"]');

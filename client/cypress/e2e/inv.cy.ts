@@ -123,11 +123,13 @@ describe('Inventory', () => {
     //cy.wait('@filterInventory');
     nextTick(1000);
 
-    page.getInventoryRow().then((row) => {
-      cy.wrap(row).get('[data-cy="inventory-item"]').should('contain', Filters_Test.Item);
-      cy.wrap(row).get('[data-cy="inventory-brand"]').should('contain', Filters_Test.Brand);
-      cy.wrap(row).get('[data-cy="inventory-type"]').should('contain', Filters_Test.Type);
-      cy.wrap(row).get('[data-cy="inventory-size"]').should('contain', Filters_Test.Size);
+    cy.get(`[data-cy="inventory-table"]`).then((table) => {
+      cy.wrap(table).get(`[data-cy="inventory-row"]`).then((row) => {
+        cy.wrap(row).get(`[data-cy="inventory-item"]`).should('contain', Filters_Test.Item);
+        cy.wrap(row).get(`[data-cy="inventory-brand"]`).should('contain', Filters_Test.Brand);
+        cy.wrap(row).get(`[data-cy="inventory-type"]`).should('contain', Filters_Test.Type);
+        cy.wrap(row).get(`[data-cy="inventory-size"]`).should('contain', Filters_Test.Size);
+      });
     });
   });
 
