@@ -82,17 +82,23 @@
               data-cy="filter-material"
             />
           </mat-form-field>
-
+        </div>
+        <div class="filter-extra">
           <!-- Clear Filters Button -->
-          <button
+            <button
             mat-stroked-button
             type="button"
             (click)="item.set(undefined); brand.set(undefined); color.set(undefined); size.set(undefined);
             type.set(undefined); material.set(undefined)"
             data-cy="filter-clear"
-            class="clear-button">
+            class="clear-button"
+            >
             Clear
-          </button>
+            </button>
+
+            <div mat-stroked-button class="count-display">
+            Count: {{ serverFilteredInventory().length }}
+            </div>
         </div>
       </mat-card-content>
     </mat-card>

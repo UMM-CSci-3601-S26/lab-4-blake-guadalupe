@@ -1,3 +1,17 @@
+.mat-list-item {
+  border-bottom: 1px solid black;
+  padding: 12px;
+}
+
+.list-style {
+  border: 2px solid black;
+  width: auto;
+  border-radius: 8px;
+  padding: 5px;
+  display: flex;
+  gap: 20px;
+}
+
 .demo-table {
   width: 100%;
 }
@@ -20,8 +34,28 @@ th.mat-sort-header-sorted {
 }
 
 .clear-button {
-  grid-column: 1 / -1;
-  align-self: start;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 0 16px;
+  min-height: 36px;
+  display: flex;
+}
+
+.filter-extra {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.count-display {
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 0 16px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .page-description {
@@ -33,7 +67,7 @@ th.mat-sort-header-sorted {
   font-size: 0.9rem;
 }
 
-.inventory-title {
+.supply-list-title {
   font-size: 1.5rem;
   font-weight: bold;
 }
