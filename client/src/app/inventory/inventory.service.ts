@@ -29,24 +29,24 @@ export class InventoryService {
   private readonly notesKey = 'notes';
 
   typeOptions = [
-    { value: 'pencils', label: 'Pencils' },
-    { value: 'colored_pencils', label: 'Colored Pencils' },
-    { value: 'sharpeners', label: 'Sharpeners' },
+    { value: 'pencil', label: 'Pencil' },
+    { value: 'colored pencils', label: 'Colored Pencils' },
+    { value: 'pencil sharpener', label: 'Pencil Sharpener' },
     { value: 'markers', label: 'Markers' },
-    { value: 'highlighters', label: 'Highlighters' },
-    { value: 'dry_erase_markers', label: 'Dry-Erase Markers' },
+    { value: 'highlighter', label: 'Highlighter' },
+    { value: 'dry erase markers', label: 'Dry Erase Markers' },
     { value: 'crayons', label: 'Crayons' },
-    { value: 'pens', label: 'Pens' },
-    { value: 'erasers', label: 'Erasers' },
-    { value: 'folders', label: 'Folders' },
-    { value: 'binders', label: 'Binders' },
-    { value: 'notebooks', label: 'Notebooks' },
+    { value: 'pen', label: 'Pen' },
+    { value: 'eraser', label: 'Eraser' },
+    { value: 'folder', label: 'Folder' },
+    { value: 'binder', label: 'Binder' },
+    { value: 'notebook', label: 'Notebook' },
     { value: 'glue', label: 'Glue' },
-    { value: 'rulers', label: 'Rulers' },
+    { value: 'ruler', label: 'Ruler' },
     { value: 'scissors', label: 'Scissors' },
     { value: 'headphones', label: 'Headphones' },
-    { value: 'backpacks', label: 'Backpacks' },
-    { value: 'boxes', label: 'Boxes' },
+    { value: 'backpack', label: 'Backpack' },
+    { value: 'blanket', label: 'Blanket' },
     { value: 'other', label: 'Other' }
   ];
 
