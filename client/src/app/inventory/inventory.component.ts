@@ -1,5 +1,5 @@
 // Angular Imports
-import { Component, effect, inject, signal, viewChild } from '@angular/core';
+import { Component, effect, inject, signal, viewChild, computed } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -15,6 +15,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 // RxJS Imports
 import { catchError, combineLatest, debounceTime, of, switchMap } from 'rxjs';
@@ -44,7 +45,8 @@ import { InventoryService } from './inventory.service';
     MatButtonModule,
     MatTooltipModule,
     MatIconModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatAutocompleteModule
   ],
 })
 export class InventoryComponent {
@@ -75,6 +77,14 @@ export class InventoryComponent {
 
   errMsg = signal<string | undefined>(undefined);
 
+  filteredTypeOptions = computed(() => {
+    const input = (this.item() || '').toLowerCase();
+    if (!input) return this.inventoryService.typeOptions;
+    return this.inventoryService.typeOptions.filter(option =>
+      option.label.toLowerCase().includes(input) || option.value.toLowerCase().includes(input)
+    );
+  });
+
   private item$ = toObservable(this.item);
   private brand$ = toObservable(this.brand);
   private color$ = toObservable(this.color);
@@ -103,4 +113,6 @@ export class InventoryComponent {
     ),
     { initialValue: [] }
   );
+
+
 }
