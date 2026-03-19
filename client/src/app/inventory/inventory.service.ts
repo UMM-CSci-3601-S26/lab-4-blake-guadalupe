@@ -50,6 +50,26 @@ export class InventoryService {
     { value: 'other', label: 'Other' }
   ];
 
+  brandOptions = [
+    {value: 'placeholder1', label: 'Placeholder1'},
+    {value: 'placeholder2', label: 'Placeholder2'}
+  ];
+
+  colorOptions = [
+    {value: 'placeholder1', label: 'Placeholder1'},
+    {value: 'placeholder2', label: 'Placeholder2'}
+  ];
+
+  sizeOptions = [
+    {value: 'placeholder1', label: 'Placeholder1'},
+    {value: 'placeholder2', label: 'Placeholder2'}
+  ];
+
+  materialOptions = [
+    {value: 'placeholder1', label: 'Placeholder1'},
+    {value: 'placeholder2', label: 'Placeholder2'}
+  ];
+
   getInventory(filters?: {item?: string; description?: string; brand?: string; color?: string;
     count?: number; size?: string; type?: string; material?: string; quantity?: number; notes?: string}): Observable<Inventory[]> {
 
