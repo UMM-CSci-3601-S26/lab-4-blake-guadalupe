@@ -9,6 +9,12 @@ import { InventoryService } from 'src/app/inventory/inventory.service';
 })
 
 export class MockInventoryService implements Pick<InventoryService, 'getInventory'> {
+  typeOptions = [
+    { value: 'markers', label: 'Markers' },
+    { value: 'notebook', label: 'Notebook' },
+    { value: 'folder', label: 'Folder' }
+  ];
+
   static testInventory: Inventory[] = [
     {
       item: "Markers",
