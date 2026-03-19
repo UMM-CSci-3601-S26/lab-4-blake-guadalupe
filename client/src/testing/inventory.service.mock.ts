@@ -15,6 +15,29 @@ export class MockInventoryService implements Pick<InventoryService, 'getInventor
     { value: 'folder', label: 'Folder' }
   ];
 
+  brandOptions = [
+    { value: 'Crayola', label: 'Crayola' },
+    { value: 'Five Star', label: 'Five Star' },
+    { value: 'N/A', label: 'N/A' }
+  ];
+
+  colorOptions = [
+    { value: 'Red', label: 'Red' },
+    { value: 'Yellow', label: 'Yellow' },
+    { value: 'N/A', label: 'N/A' }
+  ];
+
+  sizeOptions = [
+    { value: 'Wide', label: 'Wide' },
+    { value: 'Wide Ruled', label: 'Wide Ruled' },
+    { value: 'N/A', label: 'N/A' }
+  ];
+
+  materialOptions = [
+    { value: 'Plastic', label: 'Plastic' },
+    { value: 'N/A', label: 'N/A' }
+  ];
+
   static testInventory: Inventory[] = [
     {
       item: "Markers",
