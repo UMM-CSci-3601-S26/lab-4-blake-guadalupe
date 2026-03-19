@@ -145,11 +145,13 @@ describe('Misbehaving Inventory Table', () => {
 
   let inventoryServiceStub: {
     getInventory: () => Observable<Inventory[]>;
+    typeOptions: { value: string; label: string }[];
     //filterInventory: () => Inventory[];
   };
 
   beforeEach(() => {
     inventoryServiceStub = {
+      typeOptions: [],
       getInventory: () =>
         new Observable((observer) => {
           observer.error('getInventory() Observer generates an error');

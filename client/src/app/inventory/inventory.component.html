@@ -22,10 +22,16 @@
             <input
               matInput
               [ngModel]="item() ?? ''"
+              [matAutocomplete] = "auto"
               (ngModelChange)="item.set($event?.trim() || undefined)"
               placeholder="contains..."
               data-cy="filter-item"
             />
+            <mat-autocomplete #auto="matAutocomplete">
+              @for (option of filteredTypeOptions() ; track option.value) {
+                <mat-option [value]="option.value">{{ option.label }}</mat-option>
+              }
+            </mat-autocomplete>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
