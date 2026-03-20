@@ -25,6 +25,38 @@ export class SupplyListService {
   private readonly quantityKey = 'quantity';
   private readonly notesKey = 'notes';
 
+  schoolOptions = [
+    {value: 'placeholder1', label: 'Placeholder1'},
+    {value: 'placeholder2', label: 'Placeholder2'}
+  ];
+  gradeOptions = [
+    {value: 'placeholder1', label: 'Placeholder1'},
+    {value: 'placeholder2', label: 'Placeholder2'}
+  ];
+  ItemOptions = [
+    {value: 'placeholder1', label: 'Placeholder1'},
+    {value: 'placeholder2', label: 'Placeholder2'}
+  ];
+  brandOptions = [
+    {value: 'placeholder1', label: 'Placeholder1'},
+    {value: 'placeholder2', label: 'Placeholder2'}
+  ];
+
+  colorOptions = [
+    {value: 'placeholder1', label: 'Placeholder1'},
+    {value: 'placeholder2', label: 'Placeholder2'}
+  ];
+
+  sizeOptions = [
+    {value: 'placeholder1', label: 'Placeholder1'},
+    {value: 'placeholder2', label: 'Placeholder2'}
+  ];
+
+  materialOptions = [
+    {value: 'placeholder1', label: 'Placeholder1'},
+    {value: 'placeholder2', label: 'Placeholder2'}
+  ];
+
   getSupplyList(filters?: {school?: string; grade?: string; item?: string; description?: string; brand?: string; color?: string;
     count?: number; size?: string; type?: string; material?: string; quantity?: number; notes?: string}): Observable<SupplyList[]> {
 
