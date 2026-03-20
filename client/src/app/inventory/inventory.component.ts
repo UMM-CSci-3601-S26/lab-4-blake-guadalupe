@@ -85,6 +85,39 @@ export class InventoryComponent {
     );
   });
 
+  filteredBrandOptions = computed(() => {
+    const input = (this.item() || '').toLowerCase();
+    if (!input) return this.inventoryService.brandOptions;
+    return this.inventoryService.brandOptions.filter(option =>
+      option.label.toLowerCase().includes(input) || option.value.toLowerCase().includes(input)
+    );
+  });
+
+  filteredColorOptions = computed(() => {
+    const input = (this.item() || '').toLowerCase();
+    if (!input) return this.inventoryService.colorOptions;
+    return this.inventoryService.colorOptions.filter(option =>
+      option.label.toLowerCase().includes(input) || option.value.toLowerCase().includes(input)
+    );
+  });
+
+  filteredSizeOptions = computed(() => {
+    const input = (this.item() || '').toLowerCase();
+    if (!input) return this.inventoryService.sizeOptions;
+    return this.inventoryService.sizeOptions.filter(option =>
+      option.label.toLowerCase().includes(input) || option.value.toLowerCase().includes(input)
+    );
+  });
+
+  filteredMaterialOptions = computed(() => {
+    const input = (this.item() || '').toLowerCase();
+    if (!input) return this.inventoryService.materialOptions;
+    return this.inventoryService.materialOptions.filter(option =>
+      option.label.toLowerCase().includes(input) || option.value.toLowerCase().includes(input)
+    );
+  });
+
+
   private item$ = toObservable(this.item);
   private brand$ = toObservable(this.brand);
   private color$ = toObservable(this.color);

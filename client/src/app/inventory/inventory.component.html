@@ -39,10 +39,16 @@
             <input
               matInput
               [ngModel]="brand() ?? ''"
+              [matAutocomplete] = "auto"
               (ngModelChange)="brand.set($event?.trim() || undefined)"
               placeholder="contains..."
               data-cy="filter-brand"
             />
+            <mat-autocomplete #auto="matAutocomplete">
+              @for (option of filteredBrandOptions() ; track option.value) {
+                <mat-option [value]="option.value">{{ option.label }}</mat-option>
+              }
+            </mat-autocomplete>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
@@ -50,10 +56,16 @@
             <input
               matInput
               [ngModel]="color() ?? ''"
+              [matAutocomplete] = "auto"
               (ngModelChange)="color.set($event?.trim() || undefined)"
               placeholder="contains..."
               data-cy="filter-color"
             />
+            <mat-autocomplete #auto="matAutocomplete">
+              @for (option of filteredColorOptions() ; track option.value) {
+                <mat-option [value]="option.value">{{ option.label }}</mat-option>
+              }
+            </mat-autocomplete>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
@@ -61,10 +73,16 @@
             <input
               matInput
               [ngModel]="size() ?? ''"
+              [matAutocomplete] = "auto"
               (ngModelChange)="size.set($event?.trim() || undefined)"
               placeholder="contains..."
               data-cy="filter-size"
             />
+            <mat-autocomplete #auto="matAutocomplete">
+              @for (option of filteredSizeOptions() ; track option.value) {
+                <mat-option [value]="option.value">{{ option.label }}</mat-option>
+              }
+            </mat-autocomplete>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
@@ -72,10 +90,16 @@
             <input
               matInput
               [ngModel]="type() ?? ''"
+              [matAutocomplete] = "auto"
               (ngModelChange)="type.set($event?.trim() || undefined)"
               placeholder="contains..."
               data-cy="filter-type"
             />
+            <mat-autocomplete #auto="matAutocomplete">
+              @for (option of filteredTypeOptions() ; track option.value) {
+                <mat-option [value]="option.value">{{ option.label }}</mat-option>
+              }
+            </mat-autocomplete>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
@@ -83,10 +107,16 @@
             <input
               matInput
               [ngModel]="material() ?? ''"
+              [matAutocomplete] = "auto"
               (ngModelChange)="material.set($event?.trim() || undefined)"
               placeholder="contains..."
               data-cy="filter-material"
             />
+            <mat-autocomplete #auto="matAutocomplete">
+              @for (option of filteredMaterialOptions() ; track option.value) {
+                <mat-option [value]="option.value">{{ option.label }}</mat-option>
+              }
+            </mat-autocomplete>
           </mat-form-field>
         </div>
         <div class="filter-extra">
