@@ -119,7 +119,7 @@ export class SupplyListComponent {
     );
   });
 
-  filterMaterialOption = computed(() => {
+  filteredMaterialOptions = computed(() => {
     const input = (this.item() || '').toLowerCase();
     if (!input) return this.supplylistService.materialOptions;
     return this.supplylistService.materialOptions.filter(option =>
