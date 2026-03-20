@@ -53,7 +53,7 @@ export class MockSupplyListService implements Pick<SupplyListService, 'getSupply
       notes: "N/A"
     }
   ];
-  
+
   schoolOptions = [
     { value: 'MHS', label: 'MHS' },
     { value: 'Herman', label: 'Herman' }
