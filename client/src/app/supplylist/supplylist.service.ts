@@ -33,7 +33,7 @@ export class SupplyListService {
     {value: 'placeholder1', label: 'Placeholder1'},
     {value: 'placeholder2', label: 'Placeholder2'}
   ];
-  ItemOptions = [
+  itemOptions = [
     {value: 'placeholder1', label: 'Placeholder1'},
     {value: 'placeholder2', label: 'Placeholder2'}
   ];
@@ -48,6 +48,11 @@ export class SupplyListService {
   ];
 
   sizeOptions = [
+    {value: 'placeholder1', label: 'Placeholder1'},
+    {value: 'placeholder2', label: 'Placeholder2'}
+  ];
+  
+  typeOptions = [
     {value: 'placeholder1', label: 'Placeholder1'},
     {value: 'placeholder2', label: 'Placeholder2'}
   ];
