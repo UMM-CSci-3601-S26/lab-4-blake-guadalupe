@@ -26,6 +26,11 @@
               placeholder="contains..."
               data-cy="filter-school"
             />
+            <mat-autocomplete #auto="matAutocomplete">
+              @for (option of filteredSchoolOptions() ; track option.value) {
+                <mat-option [value]="option.value">{{ option.label }}</mat-option>
+              }
+              </mat-autocomplete>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
@@ -37,6 +42,11 @@
               placeholder="contains..."
               data-cy="filter-grade"
             />
+            <mat-autocomplete #auto="matAutocomplete">
+              @for (option of filteredGradeOptions() ; track option.value) {
+                <mat-option [value]="option.value">{{ option.label }}</mat-option>
+              }
+              </mat-autocomplete>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
@@ -48,6 +58,11 @@
               placeholder="contains..."
               data-cy="filter-item"
             />
+            <mat-autocomplete #auto="matAutocomplete">
+              @for (option of filteredItemOptions() ; track option.value) {
+                <mat-option [value]="option.value">{{ option.label }}</mat-option>
+              }
+              </mat-autocomplete>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
@@ -59,6 +74,11 @@
               placeholder="contains..."
               data-cy="filter-brand"
             />
+            <mat-autocomplete #auto="matAutocomplete">
+              @for (option of filteredBrandOptions() ; track option.value) {
+                <mat-option [value]="option.value">{{ option.label }}</mat-option>
+              }
+              </mat-autocomplete>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
@@ -70,6 +90,11 @@
               placeholder="contains..."
               data-cy="filter-color"
             />
+            <mat-autocomplete #auto="matAutocomplete">
+              @for (option of filteredColorOptions() ; track option.value) {
+                <mat-option [value]="option.value">{{ option.label }}</mat-option>
+              }
+              </mat-autocomplete>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
@@ -81,6 +106,11 @@
               placeholder="contains..."
               data-cy="filter-size"
             />
+            <mat-autocomplete #auto="matAutocomplete">
+              @for (option of filteredSizeOptions() ; track option.value) {
+                <mat-option [value]="option.value">{{ option.label }}</mat-option>
+              }
+              </mat-autocomplete>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
@@ -92,6 +122,11 @@
               placeholder="contains..."
               data-cy="filter-type"
             />
+            <mat-autocomplete #auto="matAutocomplete">
+              @for (option of filteredTypeOptions() ; track option.value) {
+                <mat-option [value]="option.value">{{ option.label }}</mat-option>
+              }
+              </mat-autocomplete>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
@@ -103,6 +138,11 @@
               placeholder="contains..."
               data-cy="filter-material"
             />
+            <mat-autocomplete #auto="matAutocomplete">
+              @for (option of filteredMaterialOptions() ; track option.value) {
+                <mat-option [value]="option.value">{{ option.label }}</mat-option>
+              }
+              </mat-autocomplete>
           </mat-form-field>
         </div>
 
