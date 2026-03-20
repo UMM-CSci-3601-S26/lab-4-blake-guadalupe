@@ -51,7 +51,7 @@ export class SupplyListService {
     {value: 'placeholder1', label: 'Placeholder1'},
     {value: 'placeholder2', label: 'Placeholder2'}
   ];
-  
+
   typeOptions = [
     {value: 'placeholder1', label: 'Placeholder1'},
     {value: 'placeholder2', label: 'Placeholder2'}
