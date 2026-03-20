@@ -19,6 +19,7 @@ import { SupplyList } from './supplylist';
 import { SupplyListService } from './supplylist.service';
 import { MatTreeModule } from '@angular/material/tree';
 import { CommonModule } from '@angular/common';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @Component({
   selector: 'app-supplylist-component',
@@ -42,7 +43,8 @@ import { CommonModule } from '@angular/common';
     MatTreeModule,
     MatIconModule,
     MatButtonModule,
-    CommonModule
+    CommonModule,
+    MatAutocompleteModule
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
