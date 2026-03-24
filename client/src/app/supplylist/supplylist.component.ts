@@ -19,6 +19,7 @@ import { SupplyList } from './supplylist';
 import { SupplyListService } from './supplylist.service';
 import { MatTreeModule } from '@angular/material/tree';
 import { CommonModule } from '@angular/common';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @Component({
   selector: 'app-supplylist-component',
@@ -42,7 +43,8 @@ import { CommonModule } from '@angular/common';
     MatTreeModule,
     MatIconModule,
     MatButtonModule,
-    CommonModule
+    CommonModule,
+    MatAutocompleteModule
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -60,6 +62,70 @@ export class SupplyListComponent {
       this.dataSource.data = this.serverFilteredSupplyList();
     });
   }
+
+  filteredSchoolOptions = computed(() => {
+    const input = (this.item() || '').toLowerCase();
+    if (!input) return this.supplylistService.schoolOptions;
+    return this.supplylistService.schoolOptions.filter(option =>
+      option.label.toLowerCase().includes(input) || option.value.toLowerCase().includes(input)
+    );
+  });
+
+  filteredGradeOptions = computed(() => {
+    const input = (this.item() || '').toLowerCase();
+    if (!input) return this.supplylistService.gradeOptions;
+    return this.supplylistService.gradeOptions.filter(option =>
+      option.label.toLowerCase().includes(input) || option.value.toLowerCase().includes(input)
+    );
+  });
+
+  filteredItemOptions = computed(() => {
+    const input = (this.item() || '').toLowerCase();
+    if (!input) return this.supplylistService.itemOptions;
+    return this.supplylistService.itemOptions.filter(option =>
+      option.label.toLowerCase().includes(input) || option.value.toLowerCase().includes(input)
+    );
+  });
+
+  filteredBrandOptions = computed(() => {
+    const input = (this.item() || '').toLowerCase();
+    if (!input) return this.supplylistService.brandOptions;
+    return this.supplylistService.brandOptions.filter(option =>
+      option.label.toLowerCase().includes(input) || option.value.toLowerCase().includes(input)
+    );
+  });
+
+  filteredColorOptions = computed(() => {
+    const input = (this.item() || '').toLowerCase();
+    if (!input) return this.supplylistService.colorOptions;
+    return this.supplylistService.colorOptions.filter(option =>
+      option.label.toLowerCase().includes(input) || option.value.toLowerCase().includes(input)
+    );
+  });
+
+  filteredSizeOptions = computed(() => {
+    const input = (this.item() || '').toLowerCase();
+    if (!input) return this.supplylistService.sizeOptions;
+    return this.supplylistService.sizeOptions.filter(option =>
+      option.label.toLowerCase().includes(input) || option.value.toLowerCase().includes(input)
+    );
+  });
+
+  filteredTypeOptions = computed(() => {
+    const input = (this.item() || '').toLowerCase();
+    if (!input) return this.supplylistService.typeOptions;
+    return this.supplylistService.typeOptions.filter(option =>
+      option.label.toLowerCase().includes(input) || option.value.toLowerCase().includes(input)
+    );
+  });
+
+  filteredMaterialOptions = computed(() => {
+    const input = (this.item() || '').toLowerCase();
+    if (!input) return this.supplylistService.materialOptions;
+    return this.supplylistService.materialOptions.filter(option =>
+      option.label.toLowerCase().includes(input) || option.value.toLowerCase().includes(input)
+    );
+  });
 
   school = signal<string | undefined>(undefined);
   grade = signal<string | undefined>(undefined);

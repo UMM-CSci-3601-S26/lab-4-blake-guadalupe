@@ -54,6 +54,47 @@ export class MockSupplyListService implements Pick<SupplyListService, 'getSupply
     }
   ];
 
+  schoolOptions = [
+    { value: 'MHS', label: 'MHS' },
+    { value: 'Herman', label: 'Herman' }
+  ];
+
+  gradeOptions = [
+    { value: 'PreK', label: 'PreK' },
+    { value: '6th grade', label: '6th grade' }
+  ];
+
+  itemOptions = [
+    { value: 'Markers', label: 'Markers' },
+    { value: 'Folder', label: 'Folder' },
+    { value: 'Notebook', label: 'Notebook' }
+  ];
+
+  brandOptions = [
+    { value: 'Crayola', label: 'Crayola' },
+    { value: 'Five Star', label: 'Five Star' }
+  ];
+
+  colorOptions = [
+    { value: 'Red', label: 'Red' },
+    { value: 'Yellow', label: 'Yellow' }
+  ];
+
+  sizeOptions = [
+    { value: 'Wide', label: 'Wide' },
+    { value: 'Wide Ruled', label: 'Wide Ruled' }
+  ];
+
+  typeOptions = [
+    { value: 'Washable', label: 'Washable' },
+    { value: 'Spiral', label: 'Spiral' }
+  ];
+
+  materialOptions = [
+    { value: 'Plastic', label: 'Plastic' },
+    { value: 'N/A', label: 'N/A' }
+  ];
+
   /* eslint-disable @typescript-eslint/no-unused-vars */
   getSupplyList(_filters: { school?: string, grade?: string, item?: string, brand?: string, color?: string, size?: string, type?: string, material?: string }): Observable<SupplyList[]> {
     return of(MockSupplyListService.testSupplyList);
