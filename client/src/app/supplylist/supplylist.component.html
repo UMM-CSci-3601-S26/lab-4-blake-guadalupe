@@ -22,6 +22,7 @@
             <input
               matInput
               [ngModel]="school() ?? ''"
+              [matAutocomplete] = "auto"
               (ngModelChange)="school.set($event?.trim() || undefined)"
               placeholder="contains..."
               data-cy="filter-school"
@@ -38,6 +39,7 @@
             <input
               matInput
               [ngModel]="grade() ?? ''"
+              [matAutocomplete] = "auto"
               (ngModelChange)="grade.set($event?.trim() || undefined)"
               placeholder="contains..."
               data-cy="filter-grade"
@@ -54,6 +56,7 @@
             <input
               matInput
               [ngModel]="item() ?? ''"
+              [matAutocomplete] = "auto"
               (ngModelChange)="item.set($event?.trim() || undefined)"
               placeholder="contains..."
               data-cy="filter-item"
@@ -70,6 +73,7 @@
             <input
               matInput
               [ngModel]="brand() ?? ''"
+              [matAutocomplete] = "auto"
               (ngModelChange)="brand.set($event?.trim() || undefined)"
               placeholder="contains..."
               data-cy="filter-brand"
@@ -86,6 +90,7 @@
             <input
               matInput
               [ngModel]="color() ?? ''"
+              [matAutocomplete] = "auto"
               (ngModelChange)="color.set($event?.trim() || undefined)"
               placeholder="contains..."
               data-cy="filter-color"
@@ -102,6 +107,7 @@
             <input
               matInput
               [ngModel]="size() ?? ''"
+              [matAutocomplete] = "auto"
               (ngModelChange)="size.set($event?.trim() || undefined)"
               placeholder="contains..."
               data-cy="filter-size"
@@ -118,6 +124,7 @@
             <input
               matInput
               [ngModel]="type() ?? ''"
+              [matAutocomplete] = "auto"
               (ngModelChange)="type.set($event?.trim() || undefined)"
               placeholder="contains..."
               data-cy="filter-type"
@@ -134,6 +141,7 @@
             <input
               matInput
               [ngModel]="material() ?? ''"
+              [matAutocomplete] = "auto"
               (ngModelChange)="material.set($event?.trim() || undefined)"
               placeholder="contains..."
               data-cy="filter-material"
